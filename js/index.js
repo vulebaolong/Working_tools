@@ -1,5 +1,5 @@
 ﻿let htmlTeamplate_work = `
-<div class="Auto_saleforce">
+<div class="Auto_saleforce none">
         <button type="button" class="btn_Erorr">
             Erorr
             <div class="btn_Erorr_wrap none">
