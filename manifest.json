@@ -1,0 +1,24 @@
+{
+    "name": "Create_Erorr",
+    "description": "Dorter Trang",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "permissions": ["identity", "identity.email", "storage", "activeTab", "scripting", "tabs","http://*/*", "https://*/*"],
+    "action": {
+      "default_popup": "popup/popup.html"
+    },
+    "options_page": "option/options.html",
+    
+    "content_scripts": [
+        {
+          "matches": ["https://*.force.com/*", "https://cs.shopee.vn/portal/*","https://cs.uat.shopee.vn/portal/inhouse/*", "https://docs.google.com/spreadsheets/*"],
+          "css": ["css/style.css"],
+          "js": ["js/index.js"],
+          "all_frames": true
+        }
+    ]
+}
