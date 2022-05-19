@@ -7,7 +7,7 @@
       "service_worker": "background.js",
       "type": "module"
     },
-    "permissions": ["identity", "identity.email", "storage", "activeTab", "scripting", "tabs","http://*/*", "https://*/*"],
+    "permissions": ["identity", "identity.email"],
     "action": {
       "default_popup": "popup/popup.html"
     },

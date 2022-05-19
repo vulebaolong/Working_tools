@@ -9,8 +9,8 @@ var Email
 
 chrome.identity.getProfileUserInfo((info) => {
   Email = info.email
-  //console.log(info);
-  //console.log('Email: ', Email)
+  console.log(info);
+  console.log('Email: ', Email)
 })
 
 
