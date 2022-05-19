@@ -4,7 +4,8 @@
             Erorr
             <div class="btn_Erorr_wrap none">
                 <div type="button" class="btn_Erorr_1">Erorr 1</div>
-                <div type="button" class="btn_Erorr_2">Erorr 2</div>                
+                <div type="button" class="btn_Erorr_2">Erorr 2</div>   
+                <div type="button" class="btn_Erorr_3">Erorr 3</div>               
             </div>
         </button>
 </div>
@@ -33,7 +34,11 @@ var erorr = `
         </div>
     </div>
 `
-
+var erorr2 = `
+    <svg viewBox="0 0 16 16" class="error___1_j9o">
+        <path d="M8 16A8 8 0 118 0a8 8 0 010 16zm.8-7V4H7.3v5h1.5zm0 3v-1.5H7.3V12h1.5z"></path>
+    </svg>
+`
 // lắng nghe keybroad
 //document.addEventListener("keydown", function (event) {console.log(event)}, false)
 
@@ -75,8 +80,8 @@ function Authenticato(params, datass) {
         if (params === 2) {
             Get_Email_current()
                 .then((Email_current) => {
-                    console.log('Email_current: ', Email_current)
-                    console.log('datass: ', datass)
+                    //console.log('Email_current: ', Email_current)
+                    //console.log('datass: ', datass)
                     var result = datass.includes(Email_current)
                     resolve(result)
                 })
@@ -279,6 +284,12 @@ function START(S_inhouse, S_order) {
                         //keyalt(e, 'KeyL')
                         break;
 
+                    case 'btn_Erorr_3':
+                        e.onclick = (event) => {
+                            event.stopPropagation()
+                            active(element_btn_Erorr, e)
+                            Erorr(3)
+                        }
                     default:
                         console.log('không được element_btn_Erorr');
                         break;
@@ -311,6 +322,34 @@ function START(S_inhouse, S_order) {
                                     console.log('chat_wrapper_items: ', chat_wrapper_items);
                                     Array.from(chat_wrapper_items).forEach((e3) => {
                                         e3.innerHTML = ''
+                                    })
+                                }
+                            })
+                        }
+                    });
+                    break;
+
+                case 3:
+                    Array.from(document.querySelector('#workstation').children[0].children).forEach(e1 => {
+                        console.log(Object.keys(e1.attributes).length);
+                        if (Object.keys(e1.attributes).length === 2) {
+                            var chat_wrapper = e1.children[0].children[1].children[0].children[0].children
+                            console.log('chat_wrapper: ', chat_wrapper);
+                            Array.from(chat_wrapper).forEach((e2) => {
+                                if (e2.classList.value.slice(0, 16) === 'chat_message_box') {
+                                    var chat_wrapper_items = e2.children[0].children[0].children[0].children[0].children[0].children[0].children
+                                    console.log('chat_wrapper_items: ', chat_wrapper_items);
+                                    Array.from(chat_wrapper_items).forEach((e3) => {
+
+                                        if (e3.children.length !== 0) {
+                                            var chat_wrapper_item = e3.children[0].children[0].children[0]
+
+                                            if (chat_wrapper_item.classList[1].slice(0, 14) === 'message_myself') {
+                                                //console.log(chat_wrapper_item)
+                                                chat_wrapper_item.insertAdjacentHTML("afterbegin", erorr2);
+                                            }
+                                        }
+
                                     })
                                 }
                             })
