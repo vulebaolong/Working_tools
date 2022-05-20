@@ -80,8 +80,8 @@ function Authenticato(params, datass) {
         if (params === 2) {
             Get_Email_current()
                 .then((Email_current) => {
-                    console.log('Email_current: ', Email_current)
-                    console.log('datass: ', datass)
+                    // console.log('Email_current: ', Email_current)
+                    // console.log('datass: ', datass)
                     var result = datass.includes(Email_current)
                     resolve(result)
                 })

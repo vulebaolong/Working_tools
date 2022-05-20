@@ -7,7 +7,7 @@ var Email
 //   console.log(chrome.storage.sync);
 // });
 
-chrome.identity.getProfileUserInfo((info) => {
+chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'},(info) => {
   Email = info.email
   console.log(info);
   console.log('Email: ', Email)
