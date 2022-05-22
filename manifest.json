@@ -12,13 +12,12 @@
       "default_popup": "popup/popup.html"
     },
     "options_page": "option/options.html",
-    "web_accessible_resources" : [
-        "Fonts/*.*", "*.ttf", "*.eot", "*.svg", "*.woff", "*.woff2",
-        "css/fontawesome.min.css",
-        "css/regular.min.css",
-        "webfonts/fa-regular-400.woff2",
-        "webfonts/*"
-      ],
+    "web_accessible_resources": [
+      {
+        "resources": [ "Fonts/*.*", "*.ttf", "*.eot", "*.svg", "*.woff", "*.woff2" ],
+        "matches": [ "https://web-accessible-resources-1.glitch.me/*","http://*/*", "https://*/*" ]
+      }
+    ],
     "content_scripts": [
         {
           "matches": ["https://*.force.com/*", "https://cs.shopee.vn/portal/*","https://cs.uat.shopee.vn/portal/inhouse/*", "https://docs.google.com/spreadsheets/*"],

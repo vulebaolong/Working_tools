@@ -3086,3 +3086,5 @@ const data_LDP = [
 
 
 ]
+
+// /"web_accessible_resources" : [ "Fonts/*.*", "*.ttf", "*.eot", "*.svg", "*.woff", "*.woff2"],
