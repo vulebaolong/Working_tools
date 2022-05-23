@@ -1,7 +1,5 @@
 ﻿
-let html_font = `
-    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
-`
+
 let htmlSearchLDP = `
     <div class="search_container">
         <div class="search_box">
@@ -9,7 +7,7 @@ let htmlSearchLDP = `
                 <input type="text" Placeholder="Tìm kiếm L3" class="in_search_LDP"/>
             </div>
             <div class="search_button_box">                          
-                <svg class="search_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg>
+            <i class="fa-light fa-magnifying-glass"></i>
             </div>
         </div>
         <div class="search_result_box">
@@ -95,17 +93,6 @@ window.onload = function () {
                         if (e === true) {
                             htmlTeamplate = `
                             <div class="Auto_inhouse">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-regular fa-magnifying-glass"></i>
-                                <i class="fa-light fa-magnifying-glass"></i>
-                                <i class="fa-thin fa-magnifying-glass"></i>
-                                <i class="fa-duotone fa-magnifying-glass"></i>
-
-                                <i class="fa-solid fa-magnifying-glass-minus"></i>
-                                <i class="fa-regular fa-magnifying-glass-minus"></i>
-                                <i class="fa-light fa-magnifying-glass-minus"></i>
-                                <i class="fa-thin fa-magnifying-glass-minus"></i>
-                                <i class="fa-duotone fa-magnifying-glass-minus"></i>
                                 ${htmlSearchLDP}
                                 ${html_Erorr}
                                 ${erorr}
@@ -251,7 +238,7 @@ function START(S_inhouse, S_order, htmlTeamplate, Authen) {
         
         //HTML.children[0].insertAdjacentHTML("beforeend", html_font)
         if (body !== null) {
-            body.insertAdjacentHTML("afterend", htmlTeamplate + htmlONOFF + html_font)
+            body.insertAdjacentHTML("afterend", htmlTeamplate + htmlONOFF)
         } else {
             console.log('Không tìm thấy body');
         }

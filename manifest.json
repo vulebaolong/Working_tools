@@ -8,7 +8,7 @@
       "type": "module"
     },
     "permissions": ["identity", "identity.email"],
-    "action": {
+    "page_action": {
       "default_popup": "popup/popup.html"
     },
     "options_page": "option/options.html",
