@@ -95,6 +95,17 @@ window.onload = function () {
                         if (e === true) {
                             htmlTeamplate = `
                             <div class="Auto_inhouse">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-regular fa-magnifying-glass"></i>
+                                <i class="fa-light fa-magnifying-glass"></i>
+                                <i class="fa-thin fa-magnifying-glass"></i>
+                                <i class="fa-duotone fa-magnifying-glass"></i>
+
+                                <i class="fa-solid fa-magnifying-glass-minus"></i>
+                                <i class="fa-regular fa-magnifying-glass-minus"></i>
+                                <i class="fa-light fa-magnifying-glass-minus"></i>
+                                <i class="fa-thin fa-magnifying-glass-minus"></i>
+                                <i class="fa-duotone fa-magnifying-glass-minus"></i>
                                 ${htmlSearchLDP}
                                 ${html_Erorr}
                                 ${erorr}
@@ -105,6 +116,7 @@ window.onload = function () {
                             console.log('Người dùng chưa đăng ký Erorr');
                             htmlTeamplate = `
                             <div class="Auto_inhouse">
+                                <i class="fa-solid fa-magnifying-glass"></i>
                                 ${htmlSearchLDP}
                             </div>
                             `
