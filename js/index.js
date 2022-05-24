@@ -516,7 +516,7 @@ function search_LDP(e) {
                 background = 'background: #6AA84F'
                 break;
 
-            case 'Trả hàng/ Hoàn tiền':
+            case 'Trả hàng & Hoàn tiền':
                 background = 'background: #26a69a'
                 break;
 
@@ -1584,203 +1584,203 @@ const data_LDP = [
     },
     //===========================
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
-        L3: 'Hướng dẫn trả hàng/ hoàn tiền',
+        L3: 'Hướng dẫn Trả hàng & Hoàn tiền',
         Explain: '- Hướng dẫn bấm khiếu nại cả đơn hàng hoặc hủy khiếu nại <br/> - Các hướng dẫn chung bao gồm trường hợp Buyer đã nhấn khiếu nại, đang chờ Seller phản hồi liên hệ CS nhờ hướng dẫn',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
         L3: 'Hướng dẫn buyer/ seller thương lượng về số tiền hoàn',
         Explain: 'Hướng dẫn thay đổi/ cách nhập số tiền hoàn cho phương thức Hoàn Tiền Ngay',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
         L3: 'Khiếu nại 1 phần đơn hàng',
         Explain: 'Hướng dẫn thao tác nhấn khiếu nại cho trường hợp buyer chỉ muốn hoàn tiền/THHT một hoặc một số sản phẩm trong đơn hàng',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
         L3: 'Hướng dẫn gửi trả hàng',
         Explain: 'Hướng dẫn buyer thao tác chọn hình thức trả hàng, cung cấp địa chỉ trả hàng của seller/kho Shopee, hướng dẫn đóng gói hàng trả, các vấn đề liên quan về việc chưa lấy hàng trả thành công',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
-        L3: 'Hướng dẫn Seller phản hồi yêu cầu trả hàng/ hoàn tiền',
+        L3: 'Hướng dẫn Seller phản hồi yêu cầu Trả hàng & Hoàn tiền',
         Explain: 'Hướng dẫn Seller xử lý yêu cầu THHT của Buyer, Hướng dẫn seller phản hồi KN sau Processing',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
         L3: 'Câu hỏi khác về Trả hàng & Hoàn tiền',
         Explain: 'Câu hỏi khác liên quan đến Trả hàng & Hoàn tiền, thắc mắc về chính sách THHT',
     },
     //=========================
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Buyer muốn đổi hàng',
         Explain: 'Sản phẩm không phát sinh vấn đề khiếu nại nhưng buyer có nhu cầu đổi hàng do không phù hợp nhu cầu, đổi ý',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Theo dõi hành trình',
         Explain: 'Theo dõi trạng thái vận chuyển của hàng hoàn trả khi Buyer đã trả hàng thành công',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Seller chưa nhận được hàng hoàn trả',
         Explain: 'Seller báo chưa nhận được hàng hoàn trả <br/> Seller từ chối nhận/địa chỉ sai./số điện thoại nhận hàng sai.., buyer thu COD',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Yêu cầu cung cấp hóa đơn trả hàng',
         Explain: '- Hướng dẫn buyer cung cấp hóa đơn trả hàng (áp dụng cho trường hợp buyer chọn hình thức trả hàng Tự sắp xếp, các trường hợp Dispute yêu cầu Buyer tự gửi hàng) <br/> - Buyer không được input thông tin trả hàng lên hệ thống do lỗi hệ thống nên CS hướng dẫn cung cấp hóa đơn <br/> *Buyer có tạo lệnh thu hộ COD nhưng chưa bị từ chối, CS HD hủy lệnh',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Khiếu nại bị hủy do buyer không trả hàng đúng hạn',
         Explain: 'Khiếu nại bị hủy do buyer không trả hàng đúng hạn',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Buyer trả hàng đúng hạn nhưng khiếu nại bị huỷ',
         Explain: 'Buyer đã trả hàng đúng hạn nhưng khiếu nại bị hủy do lỗi 3PL cập nhật sai trạng thái hoặc hệ thống cập nhật sai (áp dụng cho cả trường hợp khiêu nại chưa cập nhật hủy)',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Khiếu nại hàng trả về hư hỏng',
         Explain: 'Khiếu nại hàng trả về hư hỏng',
     },
     //=======================================
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Kiểm tra trạng thái hoàn tiền',
         Explain: 'Đơn hàng phát sinh khiếu nại THHT đã được chấp nhận hoàn tiền: Buyer liên hệ thắc mắc thời gian hoàn tiền, khi nào được hoàn tiền. Trường hợp Seller liên hệ, CS chọn nhánh Thanh toán/Thêm tiền vào ví',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Không nhận được tiền hoàn vào số dư TK Shopee',
         Explain: '- Đơn thanh toán COD phát sinh khiếu nại THHT đã được chấp nhận hoàn tiền nhưng buyer báo chưa nhận được tiền hoàn vào Số dư TK Shopee trong 24h <br/> - Đơn khiếu nại được Dispute xử lý offline hoàn tiền vào Số dư TK Shopee nhưng buyer báo chưa nhận được tiền hoàn vào Số dư TK Shopee trong thời gian 3-5 ngày làm việc ',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Không nhận được tiền hoàn vào TKNH',
         Explain: 'Buyer thắc mắc vẫn chưa nhận được tiền hoàn vào TKNH',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Không nhận được tiền hoàn vào thẻ tín dụng',
         Explain: 'Không nhận được tiền hoàn vào thẻ tín dụng',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Không được hoàn xu',
         Explain: 'Thắc mắc không được hoàn xu cho đơn THHT, thắc mắc không được hoàn xu phí trả hàng',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Không được hoàn voucher',
         Explain: 'Thắc mắc không được hoàn voucher cho đơn THHT',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Yêu cầu hoàn tiền vào TKNH',
         Explain: 'Buyer yêu cầu hoàn tiền vào TKNN cho đơn THHT được chấp nhận hoàn tiền',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Sai số tiền hoàn',
         Explain: 'Buyer thắc mắc/khiếu nại hoàn sai số tiền cho đơn khiếu nại THHT',
     },
     //========================
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Trạng thái xử lý khiếu nại',
         Explain: 'Buyer thắc mắc/khiếu nại hoàn sai số tiền cho đơn khiếu nại THHT',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Sai số tiền hoàn',
         Explain: 'KH hỏi trạng thái xử lý khiếu nại đến đâu rồi <br/> Seller Mall thắc mắc đơn hàng xử lý KN khi chưa có kết quả cuối cùng cho các trạng thái THHT',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Trạng thái vận chuyển của đơn trả hàng hoàn tiền',
         Explain: 'Xác minh với 3PL về trạng thái vận chuyển của đơn trả hàng hoàn tiền',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Không đồng ý với kết quả xử lý khiếu nại',
         Explain: '- Không đồng ý với kết quả xử lý khiếu nại, yêu cầu xử lý lại <br/> - Mistake DP cần xử offline',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Yêu cầu thêm bằng chứng',
         Explain: 'Dispute yêu cầu cung cấp thêm bằng chứng',
     },
     //==============================
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Case Offline',
         L3: 'Khiếu nại trong hạn THHT nhưng đã bấm Complete',
         Explain: '- Còn trong hạn đảm bảo (3 ngày/7 ngày) nhưng buyer đã bấm Complete. <br/> - Đơn hàng Buyer dùng voucher còn 0đ không thể nhấn THHT (vẫn còn hạn 3 ngày/7 ngày). <br/> - Lỗi hệ thống không thể nhấn khiếu nại (vẫn còn hạn 3 ngày/7 ngày).',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Case Offline',
         L3: 'Khiếu nại sau khi hết hạn Shopee đảm bảo',
         Explain: '- Buyer Khiếu nại nhưng đơn đã quá hạn Shopee đảm bảo. <br/> - Quá hạn phản hồi dẫn đến hệ thống auto cronjob theo logic 2-6-2. <br/> - Tiếp nhận xử lý offline cho các trường hợp đơn lừa đảo, đơn cancellation, case crisis, fake. <br/> - Các trường hợp không nhấn được khiếu nại do đơn 0đ, lỗi hệ thống... nhưng quá hạn 3 ngày/7 ngày.',
     },
 
     {
-        L1: 'Trả hàng/ Hoàn tiền',
+        L1: 'Trả hàng & Hoàn tiền',
         L2: 'Case Offline',
         L3: 'Khiếu nại ngoài quy trình',
         Explain: 'Thắc mắc khi nào hoàn tiền cho người mua/ thanh toán tiền cho người bán trên đơn hàng đã tiếp nhận khiếu nại offline.',
