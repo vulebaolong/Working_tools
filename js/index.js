@@ -102,8 +102,7 @@ window.onload = function () {
                         } else {
                             console.log('Người dùng chưa đăng ký Erorr');
                             htmlTeamplate = `
-                            <div class="Auto_inhouse">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                            <div class="Auto_inhouse">                               
                                 ${htmlSearchLDP}
                             </div>
                             `
@@ -435,22 +434,22 @@ function START(S_inhouse, S_order, htmlTeamplate, Authen) {
         var el_search_container = document.querySelector('.search_container')
 
         el_button_search.onclick = (e) => {
-            // el_search_box.classList.toggle('search_box_width')
-            // el_search_result_box.classList.toggle('search_result_box_open')
+            el_search_box.classList.toggle('search_box_width')
+            el_search_result_box.classList.toggle('search_box_width')
 
 
 
-            var width_change = (body.clientWidth / 2) - 352
+            // var width_change = (body.clientWidth / 2) - 352
 
-            if (el_search_box.clientWidth === 40) {
-                el_search_box.style.width = `${width_change}px`
-                el_search_result_box.style.width = `${width_change}px`
-                el_search_result_box.style.height = '100%'
-            } else {
-                el_search_box.style.width = '40px'
-                el_search_result_box.style.width = '0'
-                el_search_result_box.style.height = '0'
-            }
+            // if (el_search_box.clientWidth === 40) {
+            //     el_search_box.style.width = `${width_change}px`
+            //     el_search_result_box.style.width = `${width_change}px`
+            //     el_search_result_box.style.height = '100%'
+            // } else {
+            //     el_search_box.style.width = '40px'
+            //     el_search_result_box.style.width = '0'
+            //     el_search_result_box.style.height = '0'
+            // }
 
         }
 
@@ -556,6 +555,9 @@ function search_LDP(e) {
             <div class="search_result_L3">
                 <label>${e1.L3}</label>
             </div>
+            <div class="search_result_Explain">
+                <label>${e1.Explain}</label>
+            </div>
         </div>
     `
     })
@@ -633,7 +635,7 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Câu hỏi chung',
         L3: 'Câu hỏi chung khác về vận chuyển',
-        Explain: '"- Khách liên hệ kiểm tra thông tin về vận chuyển của đơn hàng nhưng chưa cung cấp/ CS không kiểm tra được mã đơn hàng cụ thể để hỗ trợ (Riêng kênh Chat thì CS chọn LDP Chat chưa hoàn tất) \n - Câu hỏi chung khác về vận chuyển mà chưa có LDP cụ thể \n - Câu hỏi chung về đồng kiểm \n Ví dụ: Các vấn đề về Auto call, KH liên hệ hỏi ĐVVC có còn hỗ trợ ở khu vực của tôi không"',
+        Explain: '- Khách liên hệ kiểm tra thông tin về vận chuyển của đơn hàng nhưng chưa cung cấp/ CS không kiểm tra được mã đơn hàng cụ thể để hỗ trợ (Riêng kênh Chat thì CS chọn LDP Chat chưa hoàn tất) <br/> - Câu hỏi chung khác về vận chuyển mà chưa có LDP cụ thể <br/> - Câu hỏi chung về đồng kiểm <br/> Ví dụ: Các vấn đề về Auto call, KH liên hệ hỏi ĐVVC có còn hỗ trợ ở khu vực của tôi không',
     },
 
     {
@@ -675,14 +677,14 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Phương thức vận chuyển',
         L3: 'Các khiếu nại khác',
-        Explain: 'Các khiếu nại khác ngoài các LDP đã có ở trên của nhóm "Phương thức vận chuyển" (masking)',
+        Explain: 'Các khiếu nại khác ngoài các LDP đã có ở trên của nhóm Phương thức vận chuyển (masking)',
     },
 
     {
         L1: 'Vận chuyển',
         L2: 'Hủy đơn hàng',
         L3: 'Yêu cầu hủy đơn',
-        Explain: 'Buyer/ seller yêu cầu huỷ đơn hàng \n Seller nghi ngờ buyer boom nhờ hủy đơn',
+        Explain: 'Buyer/ seller yêu cầu huỷ đơn hàng <br/> Seller nghi ngờ buyer boom nhờ hủy đơn',
     },
 
     {
@@ -745,7 +747,7 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Lấy hàng/ Gửi hàng',
         L3: 'Không thể xác nhận đơn hàng',
-        Explain: 'Không thể xác nhận đơn hàng: Seller nhấn xác nhận nhưng báo lỗi (ĐH chưa có trạng thái Request Created), không thể in phiếu gửi hàng (AWB), không thể xác nhận đơn do bị Pending bởi Fraud (hiển thị "Đang được kiểm tra bởi Shopee")',
+        Explain: 'Không thể xác nhận đơn hàng: <br/>- Seller nhấn xác nhận nhưng báo lỗi (ĐH chưa có trạng thái Request Created)<br/>- Không thể in phiếu gửi hàng (AWB) <br/>- không thể xác nhận đơn do bị Pending bởi Fraud (hiển thị Đang được kiểm tra bởi Shopee)',
     },
 
     {
@@ -758,13 +760,13 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Lấy hàng/ Gửi hàng',
         L3: 'Kiểm tra trạng thái lấy hàng',
-        Explain: '"Đơn chưa Pickup Done còn trong thời hạn lấy hàng (Cả đơn bình thường và đơn THHT): \n - Seller liên hệ theo dõi hành trình lấy hàng khi chưa quá hạn lấy \n - Buyer liên hệ hỏi thông tin hành trình/ hối giao đơn hàng"',
+        Explain: 'Đơn chưa Pickup Done còn trong thời hạn lấy hàng (Cả đơn bình thường và đơn THHT): <br/> - Seller liên hệ theo dõi hành trình lấy hàng khi chưa quá hạn lấy <br/> - Buyer liên hệ hỏi thông tin hành trình/ hối giao đơn hàng',
     },
     {
         L1: 'Vận chuyển',
         L2: 'Lấy hàng/ Gửi hàng',
         L3: 'Hối lấy hàng',
-        Explain: '"Đơn chưa Pickup Done quá thời hạn lấy hàng (Cả đơn bình thường và đơn THHT) => CS chuyển phiếu hối lấy: \n - Seller hối lấy hàng \n - Buyer liên hệ hỏi thông tin hành trình/ hối giao đơn hàng"',
+        Explain: 'Đơn chưa Pickup Done quá thời hạn lấy hàng (Cả đơn bình thường và đơn THHT) => CS chuyển phiếu hối lấy: <br/> - Seller hối lấy hàng <br/> - Buyer liên hệ hỏi thông tin hành trình/ hối giao đơn hàng',
     },
     {
         L1: 'Vận chuyển',
@@ -794,7 +796,7 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Lấy hàng/ Gửi hàng',
         L3: 'Các vấn đề khác',
-        Explain: '"Các vấn đề khác về việc gửi hàng không có lý do cụ thể \n - Đơn hàng quá cân không thể gửi hàng, Bưu cục đóng cửa không thể gửi hàng, 3PL từ chối lấy hàng... \n - Đơn trên hệ thống chưa Pickup Done nhưng thực tế 3PL báo đơn bị hủy"',
+        Explain: 'Các vấn đề khác về việc gửi hàng không có lý do cụ thể <br/> - Đơn hàng quá cân không thể gửi hàng, Bưu cục đóng cửa không thể gửi hàng, 3PL từ chối lấy hàng... <br/> - Đơn trên hệ thống chưa Pickup Done nhưng thực tế 3PL báo đơn bị hủy',
     },
 
     {
@@ -808,21 +810,21 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Đang chờ giao',
         L3: '[Trước EDT] Theo dõi hành trình giao hàng',
-        Explain: '"- Khách liên hệ theo dõi hành trình ĐH/ Hối giao trước và trong EDT (Cả đơn Local và CB) \n - KH liên hệ khiếu nại sai trạng thái ca giao: Shipper không đến giao hàng nhưng cập nhật buyer hẹn lại ngày giao/ Buyer không nghe máy/ Buyer không có nhà... nhưng còn ca giao trong hạn EDT và KH không khiếu nại vận chuyển. \n Nếu khách khiếu nại vận chuyển thì chọn Shipper không đến giao hàng \n - Nếu cần chuyển phiếu hối giao thì chọn [Sau EDT] Hối giao"',
+        Explain: '- Khách liên hệ theo dõi hành trình ĐH/ Hối giao trước và trong EDT (Cả đơn Local và CB) <br/>KH liên hệ khiếu nại sai trạng thái ca giao: <br/> + Shipper không đến giao hàng nhưng cập nhật buyer hẹn lại ngày giao <br/>   + Buyer không nghe máy <br/>   + Buyer không có nhà... nhưng còn ca giao trong hạn EDT và KH không khiếu nại vận chuyển. <br/> - Nếu khách khiếu nại vận chuyển thì chọn Shipper không đến giao hàng <br/> - Nếu cần chuyển phiếu hối giao thì chọn [Sau EDT] Hối giao',
     },
 
     {
         L1: 'Vận chuyển',
         L2: 'Đang chờ giao',
         L3: '[Sau EDT] Hối giao',
-        Explain: '"- Theo dõi hành trình ĐH/ Hối giao sau EDT (Cả đơn Local và CB) \n - KH liên hệ khiếu nại sai trạng thái ca giao: Shipper không đến giao hàng nhưng cập nhật buyer hẹn lại ngày giao/ Buyer không nghe máy/ Buyer không có nhà... quá EDT nhưng còn ca giao và KH không khiếu nại vận chuyển. \n Nếu khách khiếu nại vận chuyển thì chọn Shipper không đến giao hàng \n - TH CS cần chuyển phiếu hối giao"',
+        Explain: '- Theo dõi hành trình ĐH/ Hối giao sau EDT (Cả đơn Local và CB) <br/>KH liên hệ khiếu nại sai trạng thái ca giao:  <br/> + Shipper không đến giao hàng nhưng cập nhật buyer hẹn lại ngày giao <br/> + Buyer không nghe máy <br/> + Buyer không có nhà... quá EDT nhưng còn ca giao và KH không khiếu nại vận chuyển. <br/> - Nếu khách khiếu nại vận chuyển thì chọn Shipper không đến giao hàng <br/> - TH CS cần chuyển phiếu hối giao',
     },
 
     {
         L1: 'Vận chuyển',
         L2: 'Đang chờ giao',
         L3: 'Yêu cầu giao hàng lại',
-        Explain: '"Yêu cầu giao hàng lại do: \n Có hẹn với shipper dời ngày giao mà chưa thấy giao, hoặc cập nhật trạng thái chuyển hoàn nhưng KH yêu cầu giao tiếp."',
+        Explain: 'Yêu cầu giao hàng lại do: <br/> Có hẹn với shipper dời ngày giao mà chưa thấy giao, hoặc cập nhật trạng thái chuyển hoàn nhưng KH yêu cầu giao tiếp.',
     },
 
     {
@@ -843,14 +845,14 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Đang chờ giao',
         L3: 'Đã giao hàng nhưng chưa cập nhật trạng thái',
-        Explain: '- Đơn hàng đã giao thành công nhưng chưa cập nhật trạng thái \n - Buyer đã nhận được hàng nhưng đơn bị hủy trên hệ thống',
+        Explain: '- Đơn hàng đã giao thành công nhưng chưa cập nhật trạng thái <br/> - Buyer đã nhận được hàng nhưng đơn bị hủy trên hệ thống',
     },
 
     {
         L1: 'Vận chuyển',
         L2: 'Đang chờ giao',
         L3: 'Các vấn đề vận chuyển khác',
-        Explain: '"- Các vấn đề khác về giao hàng không có lý do phiếu cụ thể: đồng kiểm, xin thông tin shipper, khiếu nại thái độ shipper, hỏi MVĐ \n - Đơn trên hệ thống đang trong hành trình giao nhưng thực tế 3PL báo đã hủy đơn \n - Đơn cập nhật Lost \n Đơn bắt giữ: \n + Buyer liên hệ: Theo dõi hành trình/ hối giao \n + Seller liên hệ: Các vấn đề vận chuyển khác"',
+        Explain: '- Các vấn đề khác về giao hàng không có lý do phiếu cụ thể: đồng kiểm, xin thông tin shipper, khiếu nại thái độ shipper, hỏi MVĐ <br/> - Đơn trên hệ thống đang trong hành trình giao nhưng thực tế 3PL báo đã hủy đơn <br/> - Đơn cập nhật Lost <br/> Đơn bắt giữ: <br/> + Buyer liên hệ: Theo dõi hành trình/ hối giao <br/> + Seller liên hệ: Các vấn đề vận chuyển khác',
     },
 
     {
@@ -871,14 +873,14 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Đã nhận hàng',
         L3: 'Chưa nhận hàng nhưng cập nhật giao hàng thành công',
-        Explain: '"- ĐH chưa Completed, KH khiếu nại chưa nhận hàng nhưng đơn cập nhật giao hàng thành công \n - Nếu đơn đã Completed (quá hạn khiếu nại): CS chọn Khiếu nại sau khi hết hạn Shopee đảm bảo"',
+        Explain: '- ĐH chưa Completed, KH khiếu nại chưa nhận hàng nhưng đơn cập nhật giao hàng thành công <br/> - Nếu đơn đã Completed (quá hạn khiếu nại): CS chọn Khiếu nại sau khi hết hạn Shopee đảm bảo',
     },
 
     {
         L1: 'Vận chuyển',
         L2: 'Đã nhận hàng',
         L3: 'Không thể nhấn "Đã nhận hàng"',
-        Explain: 'DH đã giao thành công, cập nhật Delivery done nhưng buyer không thể nhấn "Đã nhận hàng" do lỗi hệ thống',
+        Explain: 'ĐH đã giao thành công, cập nhật Delivery done nhưng buyer không thể nhấn Đã nhận hàng do lỗi hệ thống',
     },
 
     {
@@ -913,7 +915,7 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Hoàn hàng',
         L3: 'Kiểm tra trạng thái trả hàng',
-        Explain: '"- Seller liên hệ kiểm tra hành trình trả hàng (chưa quá hạn hoàn hàng) \n - Buyer liên hệ hối giao nhưng hệ thống ghi nhận chuyển hoàn \n - Khách khiếu nại không nhận được liên hệ giao nhưng đơn bị chuyển hoàn, CS tư vấn nhưng không chuyển khiếu nại 3PL, nếu chuyển khiếu nại thì chọn Shipper không đến giao hàng"',
+        Explain: '- Seller liên hệ kiểm tra hành trình trả hàng (chưa quá hạn hoàn hàng) <br/> - Buyer liên hệ hối giao nhưng hệ thống ghi nhận chuyển hoàn <br/> - Khách khiếu nại không nhận được liên hệ giao nhưng đơn bị chuyển hoàn, CS tư vấn nhưng không chuyển khiếu nại 3PL, nếu chuyển khiếu nại thì chọn Shipper không đến giao hàng',
     },
 
     {
@@ -934,7 +936,7 @@ const data_LDP = [
         L1: 'Vận chuyển',
         L2: 'Hoàn hàng',
         L3: 'Các vấn đề khác',
-        Explain: '- Seller đã nhận được hàng hoàn nhưng hệ thống chậm/ chưa cập nhật trạng thái \n - Các vấn đề khác về khiếu nại hàng hoàn chưa có LDP cụ thể',
+        Explain: '- Seller đã nhận được hàng hoàn nhưng hệ thống chậm/ chưa cập nhật trạng thái <br/> - Các vấn đề khác về khiếu nại hàng hoàn chưa có LDP cụ thể',
     },
 
     {
@@ -1004,7 +1006,7 @@ const data_LDP = [
         L1: 'Thanh toán',
         L2: 'Tài khoản & bảo mật',
         L3: 'TKNH bị từ chối',
-        Explain: 'Không thể thêm TKNH, TKNH bị từ chối do: lỗi Fraud, phát sinh từ ngân hàng phát hành thẻ, sau khi LRT bị hủy do Wrong BA, hệ thống từ chối để KH cập nhật lại chi nhánh ngân hàng (Agribank/ngân hàng nước ngoài),... ',
+        Explain: 'Không thể thêm TKNH, TKNH bị từ chối do: <br/> - lỗi Fraud <br/> - phát sinh từ ngân hàng phát hành thẻ <br/> - sau khi LRT bị hủy do Wrong BA <br/> - hệ thống từ chối để KH cập nhật lại chi nhánh ngân hàng (Agribank/ngân hàng nước ngoài),... ',
     },
 
     {
@@ -1025,14 +1027,14 @@ const data_LDP = [
         L1: 'Thanh toán',
         L2: 'Thanh toán',
         L3: 'Đã thanh toán nhưng trạng thái đơn là chưa thanh toán/ hủy',
-        Explain: '"Đã thanh toán nhưng trạng thái đơn là chưa thanh toán/ hủy, đơn đã thanh toán bị hủy KH chưa nhận được tiền hoàn (hình thức CC, iBanking) \n - Nếu thanh toán bằng ShopeePay thì chọn L1 là ShopeePay \n - Nếu thanh toán bằng Số dư TK Shopee thì chọn Thắc mắc về tiền hàng/ hoàn tiền qua ví"',
+        Explain: 'Đã thanh toán nhưng trạng thái đơn là chưa thanh toán/ hủy, đơn đã thanh toán bị hủy KH chưa nhận được tiền hoàn (hình thức CC, iBanking) <br/> - Nếu thanh toán bằng ShopeePay thì chọn L1 là ShopeePay <br/> - Nếu thanh toán bằng Số dư TK Shopee thì chọn Thắc mắc về tiền hàng/ hoàn tiền qua ví',
     },
 
     {
         L1: 'Thanh toán',
         L2: 'Thanh toán',
         L3: 'Chuyển khoản dư/ thiếu/ trừ tiền 2 lần/ sai thông tin',
-        Explain: '"- KH thanh toán dư / thiếu số tiền trên đơn hàng (sử dụng cho hình thức bank tranfer) \n - KH bị trừ tiền 2 lần cho 1 đơn hàng (các hình thức thanh toán còn lại: CC, IBanking,...)"',
+        Explain: '- KH thanh toán dư / thiếu số tiền trên đơn hàng (sử dụng cho hình thức bank tranfer) <br/> - KH bị trừ tiền 2 lần cho 1 đơn hàng (các hình thức thanh toán còn lại: CC, IBanking,...)',
     },
 
     {
@@ -1060,7 +1062,7 @@ const data_LDP = [
         L1: 'Thanh toán',
         L2: 'Thanh toán',
         L3: 'Lỗi hệ thống liên quan đến thanh toán',
-        Explain: 'Lỗi hệ thống khác liên quan đến việc thanh toán: lỗi màn hình trắng, lỗi ngay tại bước thanh toán đơn hàng,...',
+        Explain: 'Lỗi hệ thống khác liên quan đến việc thanh toán: <br/> - lỗi màn hình trắng <br/> - lỗi ngay tại bước thanh toán đơn hàng <br/> - ...',
     },
 
     {
@@ -1074,14 +1076,14 @@ const data_LDP = [
         L1: 'Thanh toán',
         L2: 'Thanh toán',
         L3: 'Không thể chọn hình thức thanh toán',
-        Explain: '"KH không thể sử dụng phương thức thanh toán do không được whitelist hoặc do sản phẩm không hỗ trợ (VD: seller tắt PTTT, đơn CB không thể thanh toán bằng số dư TK Shopee) \n KH đang bị COD Black list"',
+        Explain: 'KH không thể sử dụng phương thức thanh toán do: <br/> -  không được whitelist hoặc do sản phẩm không hỗ trợ (VD: seller tắt PTTT, đơn CB không thể thanh toán bằng số dư TK Shopee) <br/> - KH đang bị COD Black list',
     },
 
     {
         L1: 'Thanh toán',
         L2: 'Thêm tiền vào ví',
         L3: 'Thắc mắc về tiền hàng/ hoàn tiền qua ví',
-        Explain: '"- Câu hỏi chung về quy trình hoàn tiền/ thêm tiền vào Số dư TK Shopee \n - Đơn hàng thanh toán bằng Số dư TK Shopee nhưng trạng thái là chưa thanh toán/hủy hoặc đơn bị hủy nhưng chưa nhận được tiền hoàn \n - Seller chưa nhận được tiền hàng do bị tạm hoãn để Fraud kiểm tra (tính năng Pending Escrow)"',
+        Explain: '- Câu hỏi chung về quy trình hoàn tiền/ thêm tiền vào Số dư TK Shopee <br/> - Đơn hàng thanh toán bằng Số dư TK Shopee nhưng trạng thái là chưa thanh toán/hủy hoặc đơn bị hủy nhưng chưa nhận được tiền hoàn <br/> - Seller chưa nhận được tiền hàng do bị tạm hoãn để Fraud kiểm tra (tính năng Pending Escrow)',
     },
 
     {
@@ -1109,7 +1111,7 @@ const data_LDP = [
         L1: 'Thanh toán',
         L2: 'Rút tiền',
         L3: 'Hướng dẫn cách rút tiền',
-        Explain: 'Hướng dẫn thao tác rút tiền (chưa có Withdrawal ID trên hệ thống), thay đổi mã PIN \n User muốn hủy lệnh rút tiền đã tạo',
+        Explain: 'Hướng dẫn thao tác rút tiền (chưa có Withdrawal ID trên hệ thống), thay đổi mã PIN <br/> User muốn hủy lệnh rút tiền đã tạo',
     },
 
     {
@@ -1144,7 +1146,7 @@ const data_LDP = [
         L1: 'Thanh toán',
         L2: 'Phí thanh toán',
         L3: 'Thắc mắc về phí bán hàng trên Shopee',
-        Explain: 'Seller hỏi thông tin chung về các loại phí khi bán hàng trên Shopee (phí thanh toán), trường hợp seller hỏi doanh thu của đơn hàng cụ thể thì chọn. \n Các vấn đề về doanh thu \n Feedback về mức phí hiện tại',
+        Explain: 'Seller hỏi thông tin chung về các loại phí khi bán hàng trên Shopee (phí thanh toán), trường hợp seller hỏi doanh thu của đơn hàng cụ thể thì chọn. <br/> Các vấn đề về doanh thu <br/> Feedback về mức phí hiện tại',
     },
 
     {
@@ -1164,7 +1166,7 @@ const data_LDP = [
     {
         L1: 'Tài khoản & Gian lận',
         L2: 'Câu hỏi chung',
-        L3: '"Không thể đăng nhập/Đăng nhập không thành công"',
+        L3: 'Không thể đăng nhập/Đăng nhập không thành công',
         Explain: 'Buyer/Seller báo không thể đăng nhập vào tài khoản Shopee, ngoại trừ các trường hợp không thể đăng nhập do bị khóa tài khoản.',
     },
 
@@ -1193,7 +1195,7 @@ const data_LDP = [
         L1: 'Tài khoản & Gian lận',
         L2: 'Câu hỏi chung',
         L3: 'Hướng dẫn sử dụng Chat',
-        Explain: 'Hướng dẫn buyer sử dụng tính năng "Chat ngay" cho Shop hoặc hướng dẫn Buyer/Seller tính năng "Trò chuyện với Shopee" để chat với nhân viên hỗ trợ, Buyer liên hệ yêu cầu xóa/chặn tin nhắn spam từ Shopee/Seller',
+        Explain: 'Hướng dẫn buyer sử dụng tính năng Chat ngay cho Shop hoặc hướng dẫn Buyer/Seller tính năng Trò chuyện với Shopee để chat với nhân viên hỗ trợ, Buyer liên hệ yêu cầu xóa/chặn tin nhắn spam từ Shopee/Seller',
     },
 
     {
@@ -1207,7 +1209,7 @@ const data_LDP = [
         L1: 'Tài khoản & Gian lận',
         L2: 'Tài khoản',
         L3: 'Yêu cầu tạo tài khoản trên số điện thoại đã được đăng ký',
-        Explain: 'Yêu cầu tạo tài khoản/thêm/thay đổi trên số điện thoại đã được đăng ký => CS không dùng. \n CS sử dụng LDP : Thêm/ thay đổi SDT',
+        Explain: 'Yêu cầu tạo tài khoản/thêm/thay đổi trên số điện thoại đã được đăng ký => CS không dùng. <br/> CS sử dụng LDP : Thêm/ thay đổi SDT',
     },
 
     {
@@ -1291,14 +1293,14 @@ const data_LDP = [
         L1: 'Tài khoản & Gian lận',
         L2: 'Gian lận',
         L3: 'Tài khoản bị ban/frozen cần Fraud xem xét (To Appeal)',
-        Explain: '"Dùng cho các trường hợp sau:\n + Tài khoản bị ban/frozen cần Fraud ""kiểm tra lại"" quyết định khóa tài khoản. \n + Case To Appeal."',
+        Explain: 'Dùng cho các trường hợp sau:<br/> + Tài khoản bị ban/frozen cần Fraud kiểm tra lại quyết định khóa tài khoản. <br/> + Case To Appeal.',
     },
 
     {
         L1: 'Tài khoản & Gian lận',
         L2: 'Gian lận',
         L3: 'Tài khoản bị ban/ frozen (No Appeal)',
-        Explain: 'Dùng cho các trường hợp tài khoản bị đóng băng/khóa tài khoản do abuse Freeship, voucher, emulator... có tag "No Appeal"',
+        Explain: 'Dùng cho các trường hợp tài khoản bị đóng băng/khóa tài khoản do abuse Freeship, voucher, emulator... có tag No Appeal',
     },
 
     {
@@ -1340,7 +1342,7 @@ const data_LDP = [
         L1: 'Tài khoản & Gian lận',
         L2: 'Gian lận',
         L3: 'Giới hạn sử dụng voucher',
-        Explain: '"User hỏi về giới hạn/nhận được cảnh báo về sử dụng voucher \n không sử dụng được voucher do liên kết TK khác (bao gồm các loại voucher dành cho người dùng mới)"',
+        Explain: 'User hỏi về giới hạn/nhận được cảnh báo về sử dụng voucher <br/> không sử dụng được voucher do liên kết TK khác (bao gồm các loại voucher dành cho người dùng mới)',
     },
 
     {
@@ -1382,28 +1384,28 @@ const data_LDP = [
         L1: 'Tài khoản & Gian lận',
         L2: 'Lừa đảo',
         L3: 'Các trường hợp lừa đảo',
-        Explain: '- User báo về các trường hợp lừa đảo như: nhận được cuộc gọi lừa đảo, tri ân khách hàng \n - User thắc mắc lý do ban tài khoản vì lạm dụng chính sách THHT',
+        Explain: '- User báo về các trường hợp lừa đảo như: nhận được cuộc gọi lừa đảo, tri ân khách hàng <br/> - User thắc mắc lý do ban tài khoản vì lạm dụng chính sách THHT',
     },
 
     {
         L1: 'Tài khoản & Gian lận',
         L2: 'Lừa đảo',
         L3: 'Tố cáo lừa đảo/hack',
-        Explain: '"User tố cáo lừa đảo, báo tài khoản bị hack \n User nhờ hủy lệnh rút tiền đã tạo do tài khoản bị hack, bị người khác tạo LRT"',
+        Explain: 'User tố cáo lừa đảo, báo tài khoản bị hack <br/> User nhờ hủy lệnh rút tiền đã tạo do tài khoản bị hack, bị người khác tạo LRT',
     },
     //===========================
     {
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Câu hỏi chung',
         L3: 'Hướng dẫn trả hàng/ hoàn tiền',
-        Explain: '"- Hướng dẫn bấm khiếu nại cả đơn hàng hoặc hủy khiếu nại \n - Các hướng dẫn chung bao gồm trường hợp Buyer đã nhấn khiếu nại, đang chờ Seller phản hồi liên hệ CS nhờ hướng dẫn"',
+        Explain: '- Hướng dẫn bấm khiếu nại cả đơn hàng hoặc hủy khiếu nại <br/> - Các hướng dẫn chung bao gồm trường hợp Buyer đã nhấn khiếu nại, đang chờ Seller phản hồi liên hệ CS nhờ hướng dẫn',
     },
 
     {
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Câu hỏi chung',
         L3: 'Hướng dẫn buyer/ seller thương lượng về số tiền hoàn',
-        Explain: 'Hướng dẫn thay đổi/ cách nhập số tiền hoàn cho phương thức "Hoàn Tiền Ngay"',
+        Explain: 'Hướng dẫn thay đổi/ cách nhập số tiền hoàn cho phương thức Hoàn Tiền Ngay',
     },
 
     {
@@ -1452,14 +1454,14 @@ const data_LDP = [
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Seller chưa nhận được hàng hoàn trả',
-        Explain: '"Seller báo chưa nhận được hàng hoàn trả \n Seller từ chối nhận/địa chỉ sai./số điện thoại nhận hàng sai.., buyer thu COD"',
+        Explain: 'Seller báo chưa nhận được hàng hoàn trả <br/> Seller từ chối nhận/địa chỉ sai./số điện thoại nhận hàng sai.., buyer thu COD',
     },
 
     {
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Hành trình trả hàng',
         L3: 'Yêu cầu cung cấp hóa đơn trả hàng',
-        Explain: '"- Hướng dẫn buyer cung cấp hóa đơn trả hàng (áp dụng cho trường hợp buyer chọn hình thức trả hàng ""Tự sắp xếp"", các trường hợp Dispute yêu cầu Buyer tự gửi hàng) \n - Buyer không được input thông tin trả hàng lên hệ thống do lỗi hệ thống nên CS hướng dẫn cung cấp hóa đơn \n *Buyer có tạo lệnh thu hộ COD nhưng chưa bị từ chối, CS HD hủy lệnh"',
+        Explain: '- Hướng dẫn buyer cung cấp hóa đơn trả hàng (áp dụng cho trường hợp buyer chọn hình thức trả hàng Tự sắp xếp, các trường hợp Dispute yêu cầu Buyer tự gửi hàng) <br/> - Buyer không được input thông tin trả hàng lên hệ thống do lỗi hệ thống nên CS hướng dẫn cung cấp hóa đơn <br/> *Buyer có tạo lệnh thu hộ COD nhưng chưa bị từ chối, CS HD hủy lệnh',
     },
 
     {
@@ -1494,7 +1496,7 @@ const data_LDP = [
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Hoàn tiền',
         L3: 'Không nhận được tiền hoàn vào số dư TK Shopee',
-        Explain: '"- Đơn thanh toán COD phát sinh khiếu nại THHT đã được chấp nhận hoàn tiền nhưng buyer báo chưa nhận được tiền hoàn vào Số dư TK Shopee trong 24h \n - Đơn khiếu nại được Dispute xử lý offline hoàn tiền vào Số dư TK Shopee nhưng buyer báo chưa nhận được tiền hoàn vào Số dư TK Shopee trong thời gian 3-5 ngày làm việc "',
+        Explain: '- Đơn thanh toán COD phát sinh khiếu nại THHT đã được chấp nhận hoàn tiền nhưng buyer báo chưa nhận được tiền hoàn vào Số dư TK Shopee trong 24h <br/> - Đơn khiếu nại được Dispute xử lý offline hoàn tiền vào Số dư TK Shopee nhưng buyer báo chưa nhận được tiền hoàn vào Số dư TK Shopee trong thời gian 3-5 ngày làm việc ',
     },
 
     {
@@ -1550,7 +1552,7 @@ const data_LDP = [
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Sai số tiền hoàn',
-        Explain: '"KH hỏi trạng thái xử lý khiếu nại đến đâu rồi \n Seller Mall thắc mắc đơn hàng xử lý KN khi chưa có kết quả cuối cùng cho các trạng thái THHT"',
+        Explain: 'KH hỏi trạng thái xử lý khiếu nại đến đâu rồi <br/> Seller Mall thắc mắc đơn hàng xử lý KN khi chưa có kết quả cuối cùng cho các trạng thái THHT',
     },
 
     {
@@ -1564,7 +1566,7 @@ const data_LDP = [
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Khiếu nại',
         L3: 'Không đồng ý với kết quả xử lý khiếu nại',
-        Explain: '"- Không đồng ý với kết quả xử lý khiếu nại, yêu cầu xử lý lại \n - Mistake DP cần xử offline"',
+        Explain: '- Không đồng ý với kết quả xử lý khiếu nại, yêu cầu xử lý lại <br/> - Mistake DP cần xử offline',
     },
 
     {
@@ -1578,14 +1580,14 @@ const data_LDP = [
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Case Offline',
         L3: 'Khiếu nại trong hạn THHT nhưng đã bấm Complete',
-        Explain: '- Còn trong hạn đảm bảo (3 ngày/7 ngày) nhưng buyer đã bấm Complete. \n - Đơn hàng Buyer dùng voucher còn 0đ không thể nhấn THHT (vẫn còn hạn 3 ngày/7 ngày). \n - Lỗi hệ thống không thể nhấn khiếu nại (vẫn còn hạn 3 ngày/7 ngày)."',
+        Explain: '- Còn trong hạn đảm bảo (3 ngày/7 ngày) nhưng buyer đã bấm Complete. <br/> - Đơn hàng Buyer dùng voucher còn 0đ không thể nhấn THHT (vẫn còn hạn 3 ngày/7 ngày). <br/> - Lỗi hệ thống không thể nhấn khiếu nại (vẫn còn hạn 3 ngày/7 ngày).',
     },
 
     {
         L1: 'Trả hàng/ Hoàn tiền',
         L2: 'Case Offline',
         L3: 'Khiếu nại sau khi hết hạn Shopee đảm bảo',
-        Explain: '"- Buyer Khiếu nại nhưng đơn đã quá hạn Shopee đảm bảo. \n - Quá hạn phản hồi dẫn đến hệ thống auto cronjob theo logic 2-6-2. \n - Tiếp nhận xử lý offline cho các trường hợp đơn lừa đảo, đơn cancellation, case crisis, fake. \n - Các trường hợp không nhấn được khiếu nại do đơn 0đ, lỗi hệ thống... nhưng quá hạn 3 ngày/7 ngày."',
+        Explain: '- Buyer Khiếu nại nhưng đơn đã quá hạn Shopee đảm bảo. <br/> - Quá hạn phản hồi dẫn đến hệ thống auto cronjob theo logic 2-6-2. <br/> - Tiếp nhận xử lý offline cho các trường hợp đơn lừa đảo, đơn cancellation, case crisis, fake. <br/> - Các trường hợp không nhấn được khiếu nại do đơn 0đ, lỗi hệ thống... nhưng quá hạn 3 ngày/7 ngày.',
     },
 
     {
@@ -1599,7 +1601,7 @@ const data_LDP = [
         L1: 'Marketing',
         L2: 'Câu hỏi chung',
         L3: 'Thắc mắc các cuộc thi do Shopee tổ chức',
-        Explain: 'Thắc mắc thể lệ các chương trình do Shopee tổ chức: bình chọn người bán,... \n Thắc mắc kết quả hoặc chưa nhận được quà Mini game Fanpage',
+        Explain: 'Thắc mắc thể lệ các chương trình do Shopee tổ chức: bình chọn người bán,... <br/> Thắc mắc kết quả hoặc chưa nhận được quà Mini game Fanpage',
     },
 
     {
@@ -1704,7 +1706,7 @@ const data_LDP = [
         L1: 'Marketing',
         L2: 'Paid Ads/ Chương trình khuyến mãi của tôi',
         L3: 'Câu hỏi chung về Paid Ads',
-        Explain: '"Paid Ads là gì? \n CTKM là gì?"',
+        Explain: 'Paid Ads là gì? <br/> CTKM là gì?',
     },
 
     {
@@ -1824,7 +1826,7 @@ const data_LDP = [
         L1: 'BD',
         L2: 'Chương trình khuyến mãi',
         L3: 'Các vấn đề về chương trình dành cho seller',
-        Explain: 'Seller thắc mắc về các chương trình dành cho Seller \n Công cụ marketing “Quảng cáo tiếp thị liên kết”, công cụ Marketing Solution',
+        Explain: 'Seller thắc mắc về các chương trình dành cho Seller <br/> Công cụ marketing “Quảng cáo tiếp thị liên kết”, công cụ Marketing Solution',
     },
 
     {
@@ -1845,7 +1847,7 @@ const data_LDP = [
         L1: 'BD',
         L2: 'Chương trình khuyến mãi',
         L3: 'Góp ý, phàn nàn về nhân viên ngành hàng',
-        Explain: 'Góp ý, phàn nàn về nhân viên ngành hàng \n Seller liên hệ hỏi thông tin nhân viên ngành hàng',
+        Explain: 'Góp ý, phàn nàn về nhân viên ngành hàng <br/> Seller liên hệ hỏi thông tin nhân viên ngành hàng',
     },
 
     {
@@ -1859,14 +1861,14 @@ const data_LDP = [
         L1: 'BD',
         L2: 'Seller Voucher',
         L3: 'Câu hỏi chung',
-        Explain: 'Câu hỏi chung về Seller voucher \n * Chỉ chọn khi seller liên hệ về voucher được tạo bởi Shopee',
+        Explain: 'Câu hỏi chung về Seller voucher <br/> * Chỉ chọn khi seller liên hệ về voucher được tạo bởi Shopee',
     },
 
     {
         L1: 'BD',
         L2: 'Seller Voucher',
         L3: 'Khiếu nại về Seller Voucher',
-        Explain: 'Các vấn đề liên quan đến Seller voucher như: cách tạo, không sử dụng được seller voucher, \n Seller không tạo nhưng bị tính phí \n * Chỉ chọn khi seller liên hệ về voucher được tạo bởi Shopee"',
+        Explain: 'Các vấn đề liên quan đến Seller voucher như: cách tạo, không sử dụng được seller voucher, <br/> Seller không tạo nhưng bị tính phí <br/> * Chỉ chọn khi seller liên hệ về voucher được tạo bởi Shopee',
     },
     //==========================
     {
@@ -1915,7 +1917,7 @@ const data_LDP = [
         L1: 'BD',
         L2: 'FS Xtra',
         L3: 'Yêu cầu gắn/gỡ tag',
-        Explain: '"Seller đã đăng ký/hủy gói nhưng chưa được gắn/gỡ tag \n Các vấn đề về mất tag khi đang tham gia gói"',
+        Explain: 'Seller đã đăng ký/hủy gói nhưng chưa được gắn/gỡ tag <br/> Các vấn đề về mất tag khi đang tham gia gói',
     },
     //===================
     {
@@ -1943,28 +1945,28 @@ const data_LDP = [
         L1: 'BD',
         L2: 'CCB - Voucher hoàn xu',
         L3: 'Yêu cầu gắn/gỡ tag',
-        Explain: '"Seller đã đăng ký/hủy gói nhưng chưa được gắn/gỡ tag \n Các vấn đề về mất tag khi đang tham gia gói"',
+        Explain: 'Seller đã đăng ký/hủy gói nhưng chưa được gắn/gỡ tag <br/> Các vấn đề về mất tag khi đang tham gia gói',
     },
     //============
     {
         L1: 'BD',
         L2: 'Flash sale',
         L3: 'Đăng ký flash sale',
-        Explain: 'Seller muốn đăng ký Flash Sale \n * Chỉ chọn khi seller liên hệ về chương trình Flashsale được tạo bởi Shopee',
+        Explain: 'Seller muốn đăng ký Flash Sale <br/> * Chỉ chọn khi seller liên hệ về chương trình Flashsale được tạo bởi Shopee',
     },
 
     {
         L1: 'BD',
         L2: 'Flash sale',
         L3: 'Các vấn đề về flash sale',
-        Explain: 'Seller liên hệ về các vấn đề liên quan đến Flash Sale \n * Chỉ chọn khi seller liên hệ về chương trình Flashsale được tạo bởi Shopee',
+        Explain: 'Seller liên hệ về các vấn đề liên quan đến Flash Sale <br/> * Chỉ chọn khi seller liên hệ về chương trình Flashsale được tạo bởi Shopee',
     },
 
     {
         L1: 'BD',
         L2: 'Flash sale',
         L3: 'Các vấn đề về sản phẩm tham gia FS',
-        Explain: 'Seller liên hệ về các vấn đề liên quan đến sản phẩm tham gia Flash Sale \n * Chỉ chọn khi seller liên hệ về chương trình Flashsale được tạo bởi Shopee',
+        Explain: 'Seller liên hệ về các vấn đề liên quan đến sản phẩm tham gia Flash Sale <br/> * Chỉ chọn khi seller liên hệ về chương trình Flashsale được tạo bởi Shopee',
     },
     //===============
     {
@@ -2013,7 +2015,7 @@ const data_LDP = [
         L1: 'Trang người bán & Sao quả tạ',
         L2: 'Kênh người bán/ Shop của tôi',
         L3: 'Hướng dẫn sử dụng',
-        Explain: 'Hướng dẫn sử dụng Seller Center \n Các thông tin đến SYT, SYT+ (Tạm thời đến khi có Reason Code riêng cho SYT)',
+        Explain: 'Hướng dẫn sử dụng Seller Center <br/> Các thông tin đến SYT, SYT+ (Tạm thời đến khi có Reason Code riêng cho SYT)',
     },
 
     {
@@ -2034,7 +2036,7 @@ const data_LDP = [
         L1: 'Trang người bán & Sao quả tạ',
         L2: 'Kênh người bán/ Shop của tôi',
         L3: 'Cách đăng bán sản phẩm',
-        Explain: '"Seller hỏi về sản phẩm, cách đăng bán sản phẩm,... \n Seller bổ sung giấy tờ để đăng bán các sản phẩm kinh doanh có điều kiện"',
+        Explain: 'Seller hỏi về sản phẩm, cách đăng bán sản phẩm,... <br/> Seller bổ sung giấy tờ để đăng bán các sản phẩm kinh doanh có điều kiện',
     },
 
     {
@@ -2048,7 +2050,7 @@ const data_LDP = [
         L1: 'Trang người bán & Sao quả tạ',
         L2: 'Kênh người bán/ Shop của tôi',
         L3: 'Các vấn đề về marketing',
-        Explain: 'Seller hỏi về các hoạt động/tính năng Marketing trên trang bán hàng như: tạo trò chơi, Shopee feed, Shopee Live, tạo chương trình khuyến mãi bằng các công cụ Marketing,... \n ** Chọn khi chương trình khuyến mãi do seller tự tạo, trường hợp do Shopee tạo chọn ở VN - L1 là BD',
+        Explain: 'Seller hỏi về các hoạt động/tính năng Marketing trên trang bán hàng như: tạo trò chơi, Shopee feed, Shopee Live, tạo chương trình khuyến mãi bằng các công cụ Marketing,... <br/> ** Chọn khi chương trình khuyến mãi do seller tự tạo, trường hợp do Shopee tạo chọn ở VN - L1 là BD',
     },
 
     {
@@ -2097,14 +2099,14 @@ const data_LDP = [
         L1: 'Trang người bán & Sao quả tạ',
         L2: 'Sao quả tạ',
         L3: 'Khiếu nại điểm phạt NFR',
-        Explain: 'Seller khiếu nại điểm/yêu cầu loại điểm phạt đơn hàng không thành công \n ** Dành cho seller đã bị tính điểm phạt',
+        Explain: 'Seller khiếu nại điểm/yêu cầu loại điểm phạt đơn hàng không thành công <br/> ** Dành cho seller đã bị tính điểm phạt',
     },
 
     {
         L1: 'Trang người bán & Sao quả tạ',
         L2: 'Sao quả tạ',
         L3: 'Khiếu nại điểm phạt LSR',
-        Explain: 'Seller khiếu nại/yêu cầu loại điểm phạt đơn hàng giao trễ \n ** Dành cho seller đã bị tính điểm phạt',
+        Explain: 'Seller khiếu nại/yêu cầu loại điểm phạt đơn hàng giao trễ <br/> ** Dành cho seller đã bị tính điểm phạt',
     },
 
     {
@@ -2181,7 +2183,7 @@ const data_LDP = [
         L1: 'Sản phẩm và pháp lý',
         L2: 'Câu hỏi chung về sản phẩm',
         L3: 'Sai ngành hàng',
-        Explain: '-Seller đăng tải sản phẩm và chọn sai ngành hàng \n - Hướng dẫn chọn ngành hàng',
+        Explain: '-Seller đăng tải sản phẩm và chọn sai ngành hàng <br/> - Hướng dẫn chọn ngành hàng',
     },
 
     {
@@ -2314,7 +2316,7 @@ const data_LDP = [
         L1: 'ShopeePay',
         L2: 'Tài khoản & Bảo mật',
         L3: 'TKNH bị từ chối',
-        Explain: 'Không thể thêm TKNH, lỗi khi liên kết TKNH với ShopeePay, bị từ chối do lỗi Fraud, hoặc phát sinh từ ngân hàng phát hành thẻ ',
+        Explain: '- Không thể thêm TKNH <br/> - lỗi khi liên kết TKNH với ShopeePay <br/> - bị từ chối do lỗi Fraud <br/> - hoặc phát sinh từ ngân hàng phát hành thẻ ',
     },
 
     {
@@ -2615,7 +2617,7 @@ const data_LDP = [
         L1: 'Digital product',
         L2: 'Gian lận',
         L3: 'Giới hạn sử dụng voucher',
-        Explain: 'User hỏi về giới hạn hoặc nhận được cảnh báo khi sử dụng voucher DP (voucher trồng cây,...) do có tài khoản liên kết \n CS kiểm tra Voucher Type trên Portal nếu không phải DP thì cần chọn L1 Fraud hoặc Marketing',
+        Explain: 'User hỏi về giới hạn hoặc nhận được cảnh báo khi sử dụng voucher DP (voucher trồng cây,...) do có tài khoản liên kết <br/> CS kiểm tra Voucher Type trên Portal nếu không phải DP thì cần chọn L1 Fraud hoặc Marketing',
     },
 
     {
@@ -2664,7 +2666,7 @@ const data_LDP = [
         L1: 'Câu hỏi chung',
         L2: 'Góp ý/ lỗi hệ thống',
         L3: 'Góp ý về app',
-        Explain: '"Phàn nàn về App/web chậm/lag,..\n Góp ý để cải thiện chất lượng App/Web tốt hơn"',
+        Explain: 'Phàn nàn về App/web chậm/lag,..<br/> Góp ý để cải thiện chất lượng App/Web tốt hơn',
     },
 
     {
@@ -2685,14 +2687,14 @@ const data_LDP = [
         L1: 'Câu hỏi chung',
         L2: 'Câu hỏi chung về Shopee',
         L3: 'Shopee đảm bảo',
-        Explain: '"Chính sách Shopee đảm bảo là gì? Các thắc mắc liên quan đến Shopee đảm bảo \n Yêu cầu bảo hành sản phẩm"',
+        Explain: 'Chính sách Shopee đảm bảo là gì? Các thắc mắc liên quan đến Shopee đảm bảo <br/> Yêu cầu bảo hành sản phẩm',
     },
 
     {
         L1: 'Câu hỏi chung',
         L2: 'Câu hỏi chung về Shopee',
         L3: 'Các vấn đề chính sách/ quy định của Shopee',
-        Explain: '"KH hỏi về chính sách mua/bán trên Shopee. \n Các vấn đề về tuyển dụng của Shopee,"',
+        Explain: 'KH hỏi về chính sách mua/bán trên Shopee. <br/> Các vấn đề về tuyển dụng của Shopee,',
     },
 
     {
@@ -2734,7 +2736,7 @@ const data_LDP = [
         L1: 'Câu hỏi chung',
         L2: 'Agent complaint',
         L3: 'Sử dụng từ thô tục với CS',
-        Explain: '"KH dùng từ ngữ thô tục, phản cảm với CS khi hỗ trợ \n KH chỉ khiếu nại nhân viên và không có issue gì"',
+        Explain: 'KH dùng từ ngữ thô tục, phản cảm với CS khi hỗ trợ <br/> KH chỉ khiếu nại nhân viên và không có issue gì',
     },
     //===============
     {
@@ -2755,7 +2757,7 @@ const data_LDP = [
         L1: 'Câu hỏi khác',
         L2: 'Câu hỏi khác',
         L3: 'Chat chưa hoàn tất',
-        Explain: '"1. CS Live Chat: Khi KH không cung cấp thông tin cần hỗ trợ hoặc cung cấp nhưng ko đủ thông tin để chọn được L3 reason code (không cần chọn theo nội dung KH chat vs Bot, cs không thể chọn lý do phiếu Level 3/ Reason do: \n - KH không cung cấp thông tin hoặc thiếu thông tin để cs kiểm tra và biết vấn đề kh gặp là gì \n - Hoàn toàn ko có vấn đề cần hỗ trợ (chào Shopee, hi, kiểm tra giúp mình, hỗ trợ mình...out chat) \n - Khách liên hệ kiểm tra thông tin về vận chuyển của đơn hàng nhưng khách out chat khi chưa cung cấp/ CS không kiểm tra được mã đơn hàng cụ thể \n - KH chat tiếng anh và agent ko hiểu vấn đề kh gặp là gì \n Chat chưa hoàn tất nhưng đã có đầy đủ vấn đề và CS có thể xử lý được -> Chọn theo lý do phiếu đúng. \n 2 CCS: khi bắt đầu thì chọn """"Chat chưa hoàn tất"""" cho đến khi có vấn đề cụ thể thì chọn lại Reason code phù hợp."',
+        Explain: '1. CS Live Chat: Khi KH không cung cấp thông tin cần hỗ trợ hoặc cung cấp nhưng ko đủ thông tin để chọn được L3 reason code (không cần chọn theo nội dung KH chat vs Bot, cs không thể chọn lý do phiếu Level 3/ Reason do: <br/> - KH không cung cấp thông tin hoặc thiếu thông tin để cs kiểm tra và biết vấn đề kh gặp là gì <br/> - Hoàn toàn ko có vấn đề cần hỗ trợ (chào Shopee, hi, kiểm tra giúp mình, hỗ trợ mình...out chat) <br/> - Khách liên hệ kiểm tra thông tin về vận chuyển của đơn hàng nhưng khách out chat khi chưa cung cấp/ CS không kiểm tra được mã đơn hàng cụ thể <br/> - KH chat tiếng anh và agent ko hiểu vấn đề kh gặp là gì <br/> Chat chưa hoàn tất nhưng đã có đầy đủ vấn đề và CS có thể xử lý được -> Chọn theo lý do phiếu đúng. <br/> 2 CCS: khi bắt đầu thì chọn Chat chưa hoàn tất cho đến khi có vấn đề cụ thể thì chọn lại Reason code phù hợp.',
     },
     //===============
     {
@@ -2776,7 +2778,7 @@ const data_LDP = [
         L1: 'ShopeeFood',
         L2: 'Đăng ký',
         L3: 'Hướng dẫn bán hàng với ShopeeFood',
-        Explain: '"Hướng dẫn bán hàng, liên kết tài khoản ShopeeFood với Shopee \n Thay đổi thông tin tài khoản ShopeeFood \n Muốn trở thành tài xế ShopeFood"',
+        Explain: 'Hướng dẫn bán hàng, liên kết tài khoản ShopeeFood với Shopee <br/> Thay đổi thông tin tài khoản ShopeeFood <br/> Muốn trở thành tài xế ShopeFood',
     },
 
     {
@@ -2945,7 +2947,7 @@ const data_LDP = [
         L1: 'Bảo hiểm',
         L2: 'Câu hỏi chung',
         L3: 'Các vấn đề về bán bảo hiểm',
-        Explain: '"Sản phẩm của seller không bán kèm được bảo hiểm (trường hợp chưa xác định được nguyên nhân) \n ** Nếu do thiết lập sai phân loại hàng chọn ""Sản phẩm & Pháp lý > Câu hỏi chung về sản phẩm > Sai ngành hàng"""',
+        Explain: 'Sản phẩm của seller không bán kèm được bảo hiểm (trường hợp chưa xác định được nguyên nhân) <br/> ** Nếu do thiết lập sai phân loại hàng chọn Sản phẩm & Pháp lý > Câu hỏi chung về sản phẩm > Sai ngành hàng',
     },
 
     {
@@ -2973,7 +2975,7 @@ const data_LDP = [
         L1: 'Bảo hiểm',
         L2: 'Kích hoạt & Bồi thường',
         L3: 'Không thể kích hoạt',
-        Explain: '"- Buyer kích hoạt bảo hiểm rơi vỡ màn hình bị từ chối do màn hình thiết bị không hợp lệ,... \n - Buyer kích hoạt bảo hiểm bị lỗi "',
+        Explain: '- Buyer kích hoạt bảo hiểm rơi vỡ màn hình bị từ chối do màn hình thiết bị không hợp lệ,... <br/> - Buyer kích hoạt bảo hiểm bị lỗi ',
     },
 
     {
@@ -3022,7 +3024,7 @@ const data_LDP = [
         L1: 'Bảo hiểm',
         L2: 'Hoàn tiền/Hủy đơn hàng',
         L3: 'Yêu cầu hủy bảo hiểm',
-        Explain: '"Buyer chỉ muốn hủy bảo hiểm, KHÔNG có khiếu nại về sản phẩm chính đã mua \n ** Trường hợp có khiếu nại về sản phẩm chính chọn L1 Trả hàng/hoàn tiền"',
+        Explain: 'Buyer chỉ muốn hủy bảo hiểm, KHÔNG có khiếu nại về sản phẩm chính đã mua <br/> ** Trường hợp có khiếu nại về sản phẩm chính chọn L1 Trả hàng/hoàn tiền',
     },
 
     {
