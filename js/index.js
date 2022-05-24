@@ -433,6 +433,25 @@ function START(S_inhouse, S_order, htmlTeamplate, Authen) {
         var el_search_result_box = document.querySelector('.search_result_box')
         var el_search_container = document.querySelector('.search_container')
 
+        el_search_container.onclick = (e1) => {
+            console.log(e1)
+            console.log(e1.path)
+            console.log(e1.path.length)
+            var e1_length = e1.path.length - 3
+            e1.path.forEach((e2,i) => {
+                if ( i < e1_length ) {
+                    var el_item = Array.from(e2.classList).includes('search_result_item')
+                    if (el_item) {
+                        console.log(e2);
+                        var L1 = e2.children[0].children[0].innerText
+                        var L2 = e2.children[1].children[0].innerText
+                        var L3 = e2.children[2].children[0].innerText
+                        selectLDP('Open', L1, L2, L3)
+                    }
+                }
+            });
+        }
+
         el_button_search.onclick = (e) => {
             el_search_box.classList.toggle('search_box_width')
             el_search_result_box.classList.toggle('search_box_width')
@@ -579,7 +598,177 @@ function debounce(func, delay = 300) {
         }, delay);
     };
 }
-//=====================================
+
+//Hàm chọn LDP=========================
+function selectLDP(Trang_thai_case, Request_L1, Request_L2, Request_L3) {
+    var Item_L1
+    var Item_L2
+    var Item_L3
+    var Item_Trang_thai_case
+    var id
+    Array.from(document.querySelector('#workstation').children[0].children).forEach(e => {
+        console.log(Object.keys(e.attributes).length);
+        if (Object.keys(e.attributes).length === 2) {
+            console.log(e);
+            id = e.attributes.id.value.substr(44, 11)
+
+            if (id === 'case-detail') {
+                console.log('thông tin');
+                var list_item_case_detail = e.children[0].children[0].children[0].children[0].children[0].children[0].children[2].children[0].children[1].children[0].children[1].children[0].children[0].children[1].children[0].children
+                Item_L1 = Find_Item(list_item_case_detail, '*Lý do phiếu L1').children[1].children[0].children[0].children[0]
+                Item_L2 = Find_Item(list_item_case_detail, '*Lý do phiếu L2').children[1].children[0].children[0].children[0]
+                Item_L3 = Find_Item(list_item_case_detail, '*Lý do phiếu L3').children[1].children[0].children[0].children[0]
+                Item_Trang_thai_case = Find_Item(list_item_case_detail, '*Trạng thái Case').children[1].children[0].children[0].children[0]
+                console.log(Item_L1, Item_L2, Item_L3, Item_Trang_thai_case);
+            }
+
+            if (id === 'agentchat?s') {
+                console.log('chat');
+                var list_item_chat = e.children[0].children[0].children[0].children[0].children[2].children[0].children[1].children[1].children[0].children[0].children[0].children[0].children[1].children[0].children
+                Item_L1 = Find_Item(list_item_chat, '*Lý do phiếu L1').children[1].children[0].children[0].children[0]
+                Item_L2 = Find_Item(list_item_chat, '*Lý do phiếu L2').children[1].children[0].children[0].children[0]
+                Item_L3 = Find_Item(list_item_chat, '*Lý do phiếu L3').children[1].children[0].children[0].children[0]
+                Item_Trang_thai_case = Find_Item(list_item_chat, '*Trạng thái Case').children[1].children[0].children[0].children[0]
+                console.log(Item_L1, Item_L2, Item_L3, Item_Trang_thai_case);
+            }
+
+            if (id === 'case/create') {
+                console.log('tạo case')
+                var list_item_case_create = e.children[0].children[0].children[0].children[0].children[0].children[1].children[0].children[0].children[0].children[0].children[1].children[0].children
+                Item_L1 = Find_Item(list_item_case_create, '*Lý do phiếu L1').children[1].children[0].children[0].children[0]
+                Item_L2 = Find_Item(list_item_case_create, '*Lý do phiếu L2').children[1].children[0].children[0].children[0]
+                Item_L3 = Find_Item(list_item_case_create, '*Lý do phiếu L3').children[1].children[0].children[0].children[0]
+                //Item_Trang_thai_case = Find_Item(list_item_case_create,'*Trạng thái Case').children[1].children[0].children[0].children[0]
+                console.log(Item_L1, Item_L2, Item_L3);
+            }
+
+            //console.log('nè: ', Item_Trang_thai_case);
+        }
+
+    });
+
+    //console.log(Item_L1, Item_L2, Item_L3, Item_Trang_thai_case);
+    switch (Item_Trang_thai_case) {
+        case undefined:
+            elementReading(Item_L1, Request_L1)
+                .then((e) => {
+                    //console.log(e);
+                    e.click()
+                    return elementReading(Item_L2, Request_L2)
+                })
+                .then((e) => {
+                    //console.log(e);
+                    e.click()
+                    return elementReading(Item_L3, Request_L3)
+                })
+                .then((e) => {
+                    e.click()
+                })
+            break;
+
+        default:
+            console.log(Trang_thai_case)
+            console.log(Request_L1)
+            console.log(Request_L2)
+            console.log(Request_L3)
+
+            elementReading(Item_Trang_thai_case, Trang_thai_case)
+                .then((e) => {
+                    if (e !== undefined) {
+                        e.click()
+                    }
+                    return elementReading(Item_L1, Request_L1)
+                })
+                .then((e) => {
+                    //console.log(e);
+                    e.click()
+                    return elementReading(Item_L2, Request_L2)
+                })
+                .then((e) => {
+                    //console.log(e);
+                    e.click()
+                    return elementReading(Item_L3, Request_L3)
+                })
+                .then((e) => {
+                    e.click()
+                })
+            break;
+    }
+}
+
+function elementReading(params, Request) {
+    return new Promise(function (resolve, reject) {
+        //console.log(params);
+        params ? params.click() : reject('Không tìm thấy params: ' + params)
+
+        switch (params.parentElement.children.length) {
+            case 2:
+                console.log('Trường hợp đã load dữ liệu => click nhanh hơn')
+                var ele_result = params.nextSibling.children[0].children[0].children[0].children[1].children[0].children[0].children[0].children
+                Array.from(ele_result).forEach(element => {
+                    if (element.textContent === Request) {
+                        console.log('element.textContent: ', element.textContent);
+                        resolve(element)
+                    }
+                });
+                resolve()
+                break;
+
+            case 1:
+                console.log('Trường hợp chưa load dữ liệu => chạy event MutationObserver')
+
+                const observerOptions = {
+                    childList: true,
+                }
+
+                const observer = new MutationObserver(callback)
+
+                const targetNodes = params.parentElement
+                observer.observe(targetNodes, observerOptions)
+
+                function callback(mutations) {
+
+                    console.log('mutations: ', mutations);
+                    console.log('mutations: ', mutations[0].target);
+
+                    var ele_result = mutations[0].target.children[1].children[0].children[0].children[0].children[1].children[0].children[0].children[0].children
+                    //console.log('nè 1', ele_result);
+
+                    observer.disconnect()
+                    Array.from(ele_result).forEach(element => {
+                        if (element.textContent === Request) {
+                            //console.log('element.textContent: ', element.textContent);
+                            //console.log('element: ', element.parentElement.children);
+                            resolve(element)
+                        }
+                    });
+                }
+                break;
+
+            default:
+                break;
+        }
+
+
+    })
+}
+
+function Find_Item(params, item) {
+    var result
+    Array.from(params).forEach((e) => {
+        if (e.children.length === 2) {
+            if (e.children[0].textContent === item) {
+                //console.log('nè: ', e);
+                result = e
+            }
+        }
+
+    })
+    return result
+
+}
+
+
 
 const data_LDP = [
     {
