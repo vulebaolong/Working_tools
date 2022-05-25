@@ -2454,28 +2454,28 @@ const data_LDP = [
     //============================
     {
         L1: 'ShopeePay',
-        L2: 'Tạo tài khoản/ KYC',
+        L2: 'Hướng dẫn tạo/ KYC ví ShopeePay',
         L3: 'Hướng dẫn tạo/ KYC ví ShopeePay',
         Explain: 'Hướng dẫn Buyer KYC ví ShopeePay, hỏi thời gian KYC trong bao lâu, buyer nhờ hỗ trợ KYC',
     },
 
     {
         L1: 'ShopeePay',
-        L2: 'Tạo tài khoản/ KYC',
+        L2: 'Hướng dẫn tạo/ KYC ví ShopeePay',
         L3: 'Trạng thái KYC',
         Explain: 'Buyer thắc mắc tài khoản Ví ShopeePay đã được KYC thành công hay chưa',
     },
 
     {
         L1: 'ShopeePay',
-        L2: 'Tạo tài khoản/ KYC',
+        L2: 'Hướng dẫn tạo/ KYC ví ShopeePay',
         L3: 'Lỗi khi tạo tài khoản ví ShopeePay',
         Explain: 'Lỗi phát sinh dẫn đến tạo Ví AirPay không thành công',
     },
 
     {
         L1: 'ShopeePay',
-        L2: 'Tạo tài khoản/ KYC',
+        L2: 'Hướng dẫn tạo/ KYC ví ShopeePay',
         L3: 'Góp ý về quy trình KYC',
         Explain: 'Góp ý về quy trình KYC thẻ của Ví ShopeePay (thời gian xác minh lâu,...)',
     },
@@ -2910,7 +2910,7 @@ const data_LDP = [
     {
         L1: 'Câu hỏi chung',
         L2: 'OTP',
-        L3: 'Không nhận được voice OTPg',
+        L3: 'Không nhận được voice OTP',
         Explain: 'Không nhận được voice OTP khi thanh toán, đăng kí, đăng nhập,...',
     },
 
