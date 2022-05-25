@@ -1481,6 +1481,13 @@ const data_LDP = [
     {
         L1: 'Tài khoản & Gian lận',
         L2: 'Gian lận',
+        L3: 'Tài khoản bị ban/ frozen',
+        Explain: 'KH liên hệ về vấn đề tài khoản khóa do Fraud được CS hỗ trợ chuyển frozen để rút tiền, theo dõi đơn hàng,..',
+    },
+
+    {
+        L1: 'Tài khoản & Gian lận',
+        L2: 'Gian lận',
         L3: 'Tài khoản bị ban/frozen cần Fraud xem xét (To Appeal)',
         Explain: 'Dùng cho các trường hợp sau:<br/> + Tài khoản bị ban/frozen cần Fraud kiểm tra lại quyết định khóa tài khoản. <br/> + Case To Appeal.',
     },
