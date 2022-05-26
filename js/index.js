@@ -1621,7 +1621,7 @@ const data_LDP = [
     {
         L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
-        L3: 'Hướng dẫn Seller phản hồi yêu cầu Trả hàng & Hoàn tiền',
+        L3: 'Hướng dẫn Seller phản hồi yêu cầu trả hàng/ hoàn tiền',
         Explain: 'Hướng dẫn Seller xử lý yêu cầu THHT của Buyer, Hướng dẫn seller phản hồi KN sau Processing',
     },
 
