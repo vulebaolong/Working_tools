@@ -1593,7 +1593,7 @@ const data_LDP = [
     {
         L1: 'Trả hàng & Hoàn tiền',
         L2: 'Câu hỏi chung',
-        L3: 'Hướng dẫn Trả hàng & Hoàn tiền',
+        L3: 'Hướng dẫn trả hàng/ hoàn tiền',
         Explain: '- Hướng dẫn bấm khiếu nại cả đơn hàng hoặc hủy khiếu nại <br/> - Các hướng dẫn chung bao gồm trường hợp Buyer đã nhấn khiếu nại, đang chờ Seller phản hồi liên hệ CS nhờ hướng dẫn',
     },
 
