@@ -1,6 +1,6 @@
 {
-    "name": "MAGIC",
-    "description": "HELLO",
+    "name": "Working_tools",
+    "description": "Công cụ giúp làm việc dễ hơn",
     "version": "1.0",
     "manifest_version": 2,
     "background": {
