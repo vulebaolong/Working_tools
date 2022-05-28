@@ -10,11 +10,16 @@
     top: 1px;
 
     border: 1px;
-    border-color: black;
-    border-style: dotted;
+    /* border-color: black;
+    border-style: dotted; */
     width: 30px;
     height: 30px;
     background: none;
+    transition: all 0.2s ease;
+}
+
+.btn_ONOFF:hover {
+    background-color: #E54A2B;
 }
 
 .Auto_inhouse {
